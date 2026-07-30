@@ -6,6 +6,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class NotificationMapper {
+
     public NotificationResponse toResponse(Notification notification) {
         if (notification == null) return null;
         return NotificationResponse.builder()

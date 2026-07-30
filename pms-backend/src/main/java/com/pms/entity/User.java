@@ -51,6 +51,10 @@ public class User extends BaseEntity {
     @Builder.Default
     private boolean accountNonLocked = true;
 
+    @Column(nullable = false)
+    @Builder.Default
+    private boolean emailNotificationsEnabled = true;
+
     private LocalDateTime lastLoginAt;
 
     @ManyToMany(fetch = FetchType.EAGER)
@@ -61,10 +65,6 @@ public class User extends BaseEntity {
     )
     @Builder.Default
     private Set<Role> roles = new HashSet<>();
-
-@Column(nullable = false)
-@Builder.Default
-private boolean emailNotificationsEnabled = true;
 
     public String getFullName() {
         return firstName + " " + lastName;
